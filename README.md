@@ -1,1 +1,81 @@
-# love-for-you
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You In Every Universe</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f7dc6f);
+            background-size: 400% 400%;
+            animation: backgroundShift 10s ease infinite;
+            font-family: Arial, sans-serif;
+        }
+
+        @keyframes backgroundShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        #loveText {
+            font-size: 3em;
+            text-align: center;
+            animation: colorChange 5s infinite, sizeChange 5s infinite;
+        }
+
+        @media (max-width: 600px) {
+            #loveText {
+                font-size: 2em;
+            }
+        }
+
+        @keyframes colorChange {
+            0% { color: red; }
+            25% { color: blue; }
+            50% { color: green; }
+            75% { color: purple; }
+            100% { color: red; }
+        }
+
+        @keyframes sizeChange {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div id="loveText">I love you</div>
+
+    <script>
+        const texts = [
+            "I love you",  // English
+            "Je t'aime",   // French
+            "Te amo",      // Spanish
+            "Ich liebe dich", // German
+            "Ti amo",      // Italian
+            "Eu te amo",   // Portuguese
+            "Я тебя люблю", // Russian
+            "愛してる",     // Japanese
+            "我爱你",       // Chinese
+            "사랑해",       // Korean
+            "أحبك",        // Arabic
+            "मैं तुमसे प्यार करता हूँ", // Hindi
+        ];
+
+        let index = 0;
+        const textElement = document.getElementById('loveText');
+
+        setInterval(() => {
+            index = (index + 1) % texts.length;
+            textElement.textContent = texts[index];
+        }, 2000);  // Change every 2 seconds
+    </script>
+</body>
+</html>
